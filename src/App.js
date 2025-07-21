@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useContext } from "react";
+import { CartProvider, CartContext } from "./CartContext";
+import { WishlistProvider, WishlistContext } from "./WishlistContext";
+import { ToastProvider } from "./ToastContext";
+import ProductList from "./ProductList";
+import Cart from "./Cart";
+import Header from "./Header";
+import Wishlist from "./Wishlist";
+import "./App.css";
 
-function App() {
+function AppContent() {
+  const { cart } = useContext(CartContext);
+  const { wishlist } = useContext(WishlistContext);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header
+        onWishlistClick={() => setWishlistOpen(true)}
+        onCartClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+        wishlistCount={wishlist.length}
+        cartCount={cart.reduce((sum, item) => sum + item.qty, 0)}
+      />
+      <Wishlist open={wishlistOpen} onClose={() => setWishlistOpen(false)} />
+      <div className="app-container">
+        <h1>   </h1>
+        <ProductList />
+        <Cart />
+      </div>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ToastProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <AppContent />
+        </WishlistProvider>
+      </CartProvider>
+    </ToastProvider>
+  );
+}
