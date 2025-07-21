@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# ShopEase - A Simple E-commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ShopEase is a modern and responsive e-commerce application built with React. It demonstrates a complete shopping flow, from browsing products and managing a cart to a seamless checkout process. The application is designed to be clean, intuitive, and user-friendly.
 
-## Available Scripts
+### ✨ [Live Demo](https://shopease.vercel.app/)
 
-In the project directory, you can run:
+*(Replace `https://shopease.vercel.app/` with your actual Vercel deployment URL)*
 
-### `npm start`
+![ShopEase Screenshot](./public/screenshot.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+-   **Product Catalog:** Browse a clean, responsive grid of products.
+-   **Category Filtering:** Easily filter products by category to find what you're looking for.
+-   **Product Details:** View detailed information about each product in a modern modal.
+-   **Wishlist:** Add or remove items from a personal wishlist.
+-   **Shopping Cart:** Add products to the cart, update item quantities, and see the total price update in real-time.
+-   **Toast Notifications:** Receive instant feedback for actions like adding items to the cart or wishlist.
+-   **Checkout Process:** A seamless, single-page checkout modal with payment options.
+-   **Responsive Design:** A mobile-friendly layout that looks great on any device.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## State Management Approach
 
-### `npm run build`
+The state management in this application is handled using a combination of **React's Context API** for global state and the **`useState` hook** for local, component-specific state.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   **Global State (Context API):**
+    -   **`CartContext`**: Manages the state of the shopping cart, including the items and total price.
+    -   **`WishlistContext`**: Manages the user's wishlist.
+    -   **`ToastContext`**: Handles the display of toast notifications across the application.
+    This approach allows shared data to be accessed by any component without "prop drilling."
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   **Local State (`useState`):**
+    -   Used for component-specific state, such as modal visibility, form inputs (like the selected payment method), and UI state (like the active product category).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This hybrid strategy demonstrates a modern and efficient approach to state management in React.
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To get a local copy up and running, follow these simple steps.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   Node.js (v14 or later)
+-   npm or yarn
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/TahreemShahid/shopEase.git
+    ```
+2.  **Navigate to the project directory:**
+    ```sh
+    cd shopEase
+    ```
+3.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To start the development server, run:
 
-### Code Splitting
+```sh
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes.
 
-### Analyzing the Bundle Size
+## Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-   [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+-   [Create React App](https://create-react-app.dev/) - The project boilerplate.
+-   [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - For custom styling and responsive design.
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application is deployed on [Vercel](https://vercel.com/). Vercel provides a fast and easy way to deploy modern web projects, with seamless integration from GitHub.
