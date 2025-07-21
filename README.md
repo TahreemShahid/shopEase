@@ -2,9 +2,8 @@
 
 ShopEase is a modern and responsive e-commerce application built with React. It demonstrates a complete shopping flow, from browsing products and managing a cart to a seamless checkout process. The application is designed to be clean, intuitive, and user-friendly.
 
-### ✨ [Live Demo](https://shopease.vercel.app/)
+### ✨ [Live Demo](https://shop-ease-one-beta.vercel.app/)
 
-*(Replace `https://shopease.vercel.app/` with your actual Vercel deployment URL)*
 
 ![ShopEase Screenshot](./public/screenshot.png)
 
